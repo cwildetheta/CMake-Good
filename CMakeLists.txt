@@ -22,5 +22,33 @@ foreach(idx RANGE 0 100 25)
     message(STATUS "Set up ${idx}% done.")
 endforeach()
 
+set(list_part_2 4 5 6)
+set(target DIRECTORY "${PROJECT_SOURCE_DIR}")
+set_property(
+    ${target}
+    PROPERTY TEST_VALUES
+    1
+    2
+    3
+    "${list_part_2}"
+)
+
+get_cmake_property(test_values_list TEST_VALUES)
+message(STATUS "The values in the list are ${test_values_list}.")
+
+function(sum out a b)
+    math(EXPR ret "${a} + ${b}")
+    set("${out}" "${ret}" PARENT_SCOPE)
+endfunction()
+function(product out a b)
+    math(EXPR ret "${a} * ${b}")
+    set("${out}" "${ret}" PARENT_SCOPE)
+endfunction()
+
+sum(value_1 3 5)
+product(value_2 3 5)
+
+message(STATUS "The sum of 3 and 5 is ${value_1} and the product is ${value_2}.")
+
 add_subdirectory(say-hello)
 add_subdirectory(src)
