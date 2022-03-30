@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named say-hello
+
+# Build rule for target.
+say-hello: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 say-hello
+.PHONY : say-hello
+
+# fast build rule for target.
+say-hello/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/say-hello.dir/build.make CMakeFiles/say-hello.dir/build
+.PHONY : say-hello/fast
+
+#=============================================================================
 # Target rules for targets named CodeCMakeGood
 
 # Build rule for target.
@@ -128,6 +141,30 @@ CodeCMakeGood: cmake_check_build_system
 CodeCMakeGood/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeCMakeGood.dir/build.make CMakeFiles/CodeCMakeGood.dir/build
 .PHONY : CodeCMakeGood/fast
+
+src/hello.obj: src/hello.cpp.obj
+.PHONY : src/hello.obj
+
+# target to build an object file
+src/hello.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/say-hello.dir/build.make CMakeFiles/say-hello.dir/src/hello.cpp.obj
+.PHONY : src/hello.cpp.obj
+
+src/hello.i: src/hello.cpp.i
+.PHONY : src/hello.i
+
+# target to preprocess a source file
+src/hello.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/say-hello.dir/build.make CMakeFiles/say-hello.dir/src/hello.cpp.i
+.PHONY : src/hello.cpp.i
+
+src/hello.s: src/hello.cpp.s
+.PHONY : src/hello.s
+
+# target to generate assembly for a file
+src/hello.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/say-hello.dir/build.make CMakeFiles/say-hello.dir/src/hello.cpp.s
+.PHONY : src/hello.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -162,6 +199,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CodeCMakeGood"
+	@echo "... say-hello"
+	@echo "... src/hello.obj"
+	@echo "... src/hello.i"
+	@echo "... src/hello.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

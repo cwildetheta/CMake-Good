@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /C/msys64/home/Connor/CodeCMakeGood
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/say-hello.dir/all
 all: CMakeFiles/CodeCMakeGood.dir/all
 .PHONY : all
 
@@ -71,14 +72,41 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/say-hello.dir/clean
 clean: CMakeFiles/CodeCMakeGood.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/say-hello.dir
+
+# All Build rule for target.
+CMakeFiles/say-hello.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/say-hello.dir/build.make CMakeFiles/say-hello.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/say-hello.dir/build.make CMakeFiles/say-hello.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/C/msys64/home/Connor/CodeCMakeGood/CMakeFiles --progress-num=3,4 "Built target say-hello"
+.PHONY : CMakeFiles/say-hello.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/say-hello.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/say-hello.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles 0
+.PHONY : CMakeFiles/say-hello.dir/rule
+
+# Convenience name for target.
+say-hello: CMakeFiles/say-hello.dir/rule
+.PHONY : say-hello
+
+# clean rule for target.
+CMakeFiles/say-hello.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/say-hello.dir/build.make CMakeFiles/say-hello.dir/clean
+.PHONY : CMakeFiles/say-hello.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/CodeCMakeGood.dir
 
 # All Build rule for target.
-CMakeFiles/CodeCMakeGood.dir/all:
+CMakeFiles/CodeCMakeGood.dir/all: CMakeFiles/say-hello.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeCMakeGood.dir/build.make CMakeFiles/CodeCMakeGood.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CodeCMakeGood.dir/build.make CMakeFiles/CodeCMakeGood.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/C/msys64/home/Connor/CodeCMakeGood/CMakeFiles --progress-num=1,2 "Built target CodeCMakeGood"
@@ -86,7 +114,7 @@ CMakeFiles/CodeCMakeGood.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CodeCMakeGood.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CodeCMakeGood.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles 0
 .PHONY : CMakeFiles/CodeCMakeGood.dir/rule
