@@ -1,0 +1,3 @@
+C:/msys64/home/Connor/CodeCMakeGood/CMakeFiles/CodeCMakeGood.dir
+C:/msys64/home/Connor/CodeCMakeGood/CMakeFiles/edit_cache.dir
+C:/msys64/home/Connor/CodeCMakeGood/CMakeFiles/rebuild_cache.dir
