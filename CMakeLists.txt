@@ -50,5 +50,21 @@ product(value_2 3 5)
 
 message(STATUS "The sum of 3 and 5 is ${value_1} and the product is ${value_2}.")
 
+message(STATUS "")
+message(STATUS "")
+
+message(STATUS "The CMake SOURCE directory is ${CMAKE_SOURCE_DIR}.")
+message(STATUS "The CMake BINARY directory is ${CMAKE_BINARY_DIR}.")
+message(STATUS "The SOURCE directory of the '${PROJECT_NAME}' project is ${PROJECT_SOURCE_DIR}")
+message(STATUS "The BINARY directory of the '${PROJECT_NAME}' project is ${PROJECT_BINARY_DIR}")
+message(STATUS "The version of the current project is ${PROJECT_VERSION}.")
+message(STATUS "The current SOURCE directory is ${CMAKE_CURRENT_SOURCE_DIR}.")
+message(STATUS "The current BINARY directory is ${CMAKE_CURRENT_BINARY_DIR}.")
+message(STATUS "The current script file is ${CMAKE_CURRENT_LIST_FILE}.")
+message(STATUS "The current script directory is ${CMAKE_CURRENT_LIST_DIR}.")
+
+message(STATUS "")
+message(STATUS "")
+
 add_subdirectory(say-hello)
 add_subdirectory(src)
