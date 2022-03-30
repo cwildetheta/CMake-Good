@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles /C/msys64/home/Connor/CodeCMakeGood//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles /C/msys64/home/Connor/CodeCMakeGood/src//CMakeFiles/progress.marks
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,44 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named say-hello
+# Convenience name for target.
+src/CMakeFiles/CodeCMakeGood.dir/rule:
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/CodeCMakeGood.dir/rule
+.PHONY : src/CMakeFiles/CodeCMakeGood.dir/rule
 
-# Build rule for target.
-say-hello: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 say-hello
-.PHONY : say-hello
-
-# fast build rule for target.
-say-hello/fast:
-	$(MAKE) $(MAKESILENT) -f say-hello/CMakeFiles/say-hello.dir/build.make say-hello/CMakeFiles/say-hello.dir/build
-.PHONY : say-hello/fast
-
-#=============================================================================
-# Target rules for targets named CodeCMakeGood
-
-# Build rule for target.
-CodeCMakeGood: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeCMakeGood
+# Convenience name for target.
+CodeCMakeGood: src/CMakeFiles/CodeCMakeGood.dir/rule
 .PHONY : CodeCMakeGood
 
 # fast build rule for target.
 CodeCMakeGood/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeCMakeGood.dir/build.make src/CMakeFiles/CodeCMakeGood.dir/build
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeCMakeGood.dir/build.make src/CMakeFiles/CodeCMakeGood.dir/build
 .PHONY : CodeCMakeGood/fast
+
+main.obj: main.cpp.obj
+.PHONY : main.obj
+
+# target to build an object file
+main.cpp.obj:
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeCMakeGood.dir/build.make src/CMakeFiles/CodeCMakeGood.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeCMakeGood.dir/build.make src/CMakeFiles/CodeCMakeGood.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeCMakeGood.dir/build.make src/CMakeFiles/CodeCMakeGood.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -151,7 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CodeCMakeGood"
-	@echo "... say-hello"
+	@echo "... main.obj"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
@@ -163,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles /C/msys64/home/Connor/CodeCMakeGood//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles /C/msys64/home/Connor/CodeCMakeGood/say-hello//CMakeFiles/progress.marks
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 say-hello/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /C/msys64/home/Connor/CodeCMakeGood/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 say-hello/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,44 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 say-hello/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 say-hello/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named say-hello
+# Convenience name for target.
+say-hello/CMakeFiles/say-hello.dir/rule:
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 say-hello/CMakeFiles/say-hello.dir/rule
+.PHONY : say-hello/CMakeFiles/say-hello.dir/rule
 
-# Build rule for target.
-say-hello: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 say-hello
+# Convenience name for target.
+say-hello: say-hello/CMakeFiles/say-hello.dir/rule
 .PHONY : say-hello
 
 # fast build rule for target.
 say-hello/fast:
-	$(MAKE) $(MAKESILENT) -f say-hello/CMakeFiles/say-hello.dir/build.make say-hello/CMakeFiles/say-hello.dir/build
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f say-hello/CMakeFiles/say-hello.dir/build.make say-hello/CMakeFiles/say-hello.dir/build
 .PHONY : say-hello/fast
 
-#=============================================================================
-# Target rules for targets named CodeCMakeGood
+hello.obj: hello.cpp.obj
+.PHONY : hello.obj
 
-# Build rule for target.
-CodeCMakeGood: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeCMakeGood
-.PHONY : CodeCMakeGood
+# target to build an object file
+hello.cpp.obj:
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f say-hello/CMakeFiles/say-hello.dir/build.make say-hello/CMakeFiles/say-hello.dir/hello.cpp.obj
+.PHONY : hello.cpp.obj
 
-# fast build rule for target.
-CodeCMakeGood/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/CodeCMakeGood.dir/build.make src/CMakeFiles/CodeCMakeGood.dir/build
-.PHONY : CodeCMakeGood/fast
+hello.i: hello.cpp.i
+.PHONY : hello.i
+
+# target to preprocess a source file
+hello.cpp.i:
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f say-hello/CMakeFiles/say-hello.dir/build.make say-hello/CMakeFiles/say-hello.dir/hello.cpp.i
+.PHONY : hello.cpp.i
+
+hello.s: hello.cpp.s
+.PHONY : hello.s
+
+# target to generate assembly for a file
+hello.cpp.s:
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(MAKE) $(MAKESILENT) -f say-hello/CMakeFiles/say-hello.dir/build.make say-hello/CMakeFiles/say-hello.dir/hello.cpp.s
+.PHONY : hello.cpp.s
 
 # Help Target
 help:
@@ -150,8 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... CodeCMakeGood"
 	@echo "... say-hello"
+	@echo "... hello.obj"
+	@echo "... hello.i"
+	@echo "... hello.s"
 .PHONY : help
 
 
@@ -163,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /C/msys64/home/Connor/CodeCMakeGood && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
